@@ -69,11 +69,13 @@ def compute_output_size_2d(input_matrix, kernel_matrix):
 def convolute_2d(input_matrix, kernel_matrix):
    # length convolution output
    output_array = np.zeros(compute_output_size_2d(input_matrix, kernel_matrix))
+   print(output_array.shape[0], output_array.shape[1], output_array )
+
    # define which parts of the input matrix need to be multiplied with the kernel matrix.
    for i in range(output_array.shape[0]):
     for j in range(output_array.shape[1]):
        output_array[i,j] = np.sum(input_matrix[i:i+kernel_matrix.shape[0], j:j+kernel_matrix.shape[1]] * kernel_matrix)
 
-    return output_array
+   return output_array
 
 # -----------------------------------------------
